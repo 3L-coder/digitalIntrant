@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.minagriculture.digitalIntrant"
+    },
+    "phonegap-nfc": {
+      "PACKAGE_NAME": "com.minagriculture.digitalIntrant"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.minagriculture.digitalIntrant"
+    }
+  },
+  "dependent_plugins": {}
+}

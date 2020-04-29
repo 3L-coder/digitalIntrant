@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+  <head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover"
+    />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <title>DigitalIntrant</title>
+    <style>
+      input {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      input[type="range"] {
+        /* finger sized sliders */
+        display: block;
+        width: 100%;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px;
+        min-width: 80px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        text-align: center;
+        background-color: #177bbd;
+        color: #ffffff;
+      }
+      select {
+        font-size: 1.25em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div id="tagMode">
+        <!--div pour changer de mode-->
+        <h3 id="modeButton" class="button">Changer Mode</h3>
+        <span id="modeValue"></span><br />
+        <span id="tagModeMessage"></span>
+      </div>
+      <!--fin div pour changer de mode-->
+      <div id="">
+        <!--debut div controler lumiere
+        <select id="profil">
+          <option value="1">No ordre</option>
+          <option value="2">Region</option>
+          <option value="2">No sequence</option> </select
+        ><br /> -->
+        <h3>Information sur la carte</h3>
+        <b>Code:<input type="number" id="code" /></b>
+        <label for="lightOn">Charge?:</label>
+        <input type="checkbox" id="lightOn" /><br />
+
+        No Ordre: <input type="number" id="ordr" min="0" max="999" />
+        Region:
+        <input type="number" id="reg" min="1" max="99" />
+        No seq:
+        <input type="number" id="seq" min="0" max="999" />
+      </div>
+      <!--fin div controler lumiere-->
+      <div id="songPicker">
+        <!--debut div jouer son-->
+
+        intrants:
+        <div>
+          <select id="intrants">
+            <option>chargement de la liste</option>
+          </select>
+        </div>
+        <div>
+          <h2 id="playButton" class="button">Ajouter</h2>
+          <h2 id="stopButton" class="button">Annuler</h2>
+        </div>
+        <!--fin div jouer son-->
+      </div>
+      <h1>===============</h1>
+      <div id="deviceready" class="blink">
+        <p class="event listening">lecture de l'id</p>
+        <p class="event received">Device is Ready</p>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+      app.initialize();
+    </script>
+  </body>
+</html>
